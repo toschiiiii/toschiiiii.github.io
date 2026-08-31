@@ -9,7 +9,7 @@
   <style>
 
     /* ============================================================
-       DESIGN TOKENS — change these to retheme the whole site
+       THEME SECTION
     ============================================================ */
     :root {
       --bg:       #10002b;
@@ -46,14 +46,18 @@
     a:hover { text-decoration: underline; }
 
     /* ============================================================
-       TICKER — scrolling skill list at the very top
-       (mirrors the scrolling collector names on DIGITIZATION.wiki)
+       TICKER — scrolling skill list at the very top +  fav part
     ============================================================ */
     .ticker {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 31px;
       overflow: hidden;
       border-bottom: 1px solid var(--border);
       padding: 7px 0;
       white-space: nowrap;
+      background: var(--bg);
     }
     .ticker-track {
       display: inline-block;
@@ -75,12 +79,13 @@
     }
 
     /* ============================================================
-       NAV
+       NAVIGATION
     ============================================================ */
     nav {
       position: sticky;
-      top: 0;
+      top: 31px;
       z-index: 999;
+      height: 47px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -167,7 +172,7 @@
     }
 
     /* ============================================================
-       HOME / HERO
+       HOME
     ============================================================ */
     #home { padding-top: 64px; }
 
@@ -178,13 +183,6 @@
       white-space: pre;
       overflow-x: auto;
       margin-bottom: 44px;
-      /*
-        HOW TO GENERATE YOUR OWN ASCII NAME:
-        1. Go to  https://patorjk.com/software/taag/
-        2. Pick font "Banner3" or "Small Slant"
-        3. Type your first name or full name
-        4. Copy the result and replace the text in this <pre> block
-      */
     }
 
     .hero-meta-row {
@@ -229,7 +227,7 @@
     }
 
     /* ============================================================
-       ABOUT — archive row format
+       ABOUT
     ============================================================ */
     .archive-row {
       display: grid;
@@ -275,7 +273,7 @@
     }
 
     /* ============================================================
-       PROJECTS — archive entry format with Roman numerals
+       PROJECTS
     ============================================================ */
     .project-entry {
       display: grid;
@@ -491,21 +489,24 @@
     ============================================================
     SCROLLING TICKER
     Inspired by DIGITIZATION.wiki's scrolling collector names.
-    Customize: add or remove skill/tool names inside the spans.
+    Add or remove skill/tool names inside the spans.
     The list is doubled so the loop is seamless.
     ============================================================
   -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI Design</span>
-      <span>Figma</span><span>Illustrator</span><span>React</span><span>Git</span>
-      <span>Typography</span><span>Branding</span><span>Web Design</span><span>Motion</span>
-      <span>UX Research</span><span>Prototyping</span><span>Accessibility</span><span>Color Theory</span>
+      <span>HTML</span><span>CSS</span><span>C</span><span>Java</span><span>MySQL</span><span>PostgreSQL</span><span>VB.NET</span>
+
+      <span>Canva</span><span>Adobe Express</span><span>Figma</span>
+
+      <span>Capcut</span><span>Microsoft Clipchamp</span>
+
+      <span>Google Workspace</span><span>Microsoft Office Suite</span><span>Notion</span>
       <!-- duplicate for seamless loop -->
-      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI Design</span>
-      <span>Figma</span><span>Illustrator</span><span>React</span><span>Git</span>
-      <span>Typography</span><span>Branding</span><span>Web Design</span><span>Motion</span>
-      <span>UX Research</span><span>Prototyping</span><span>Accessibility</span><span>Color Theory</span>
+      <span>HTML</span><span>CSS</span><span>C</span><span>Java</span><span>MySQL</span><span>PostgreSQL</span><span>VB.NET</span>
+      <span>Canva</span><span>Adobe Express</span><span>Figma</span>
+      <span>Capcut</span><span>Microsoft Clipchamp</span>
+      <span>Google Workspace</span><span>Microsoft Office Suite</span><span>Notion</span>
     </div>
   </div>
 
@@ -517,11 +518,7 @@
   -->
   <nav role="navigation" aria-label="Main navigation">
 
-    <!--
-      *** CUSTOMIZE: Replace "PORTFOLIO.dev" with your name or brand.
-      The + signs on each side are the DIGITIZATION.wiki style.
-    -->
-    <div class="nav-logo">+PORTFOLIO.dev+</div>
+    <div class="nav-logo">+toschi.dev+</div>
 
     <ul class="nav-links">
       <li><a href="#home">Archive</a></li>
@@ -630,7 +627,7 @@
             <span class="skill-pill">Microsoft Clipchamp</span>
             
             <span class="skill-pill">Google Workspace</span>
-            <span class="skill-pill">Microsoft Office</span>
+            <span class="skill-pill">Microsoft Office Suite</span>
             <span class="skill-pill">Notion</span>
           </div>
         </div>
@@ -643,59 +640,56 @@
         <div class="row-val"><b>Polytechnic University of the Philippines</b> <i>(August 2024 - Present)</i></div>
         
         <div class="row-key"><i>Senior High School</i></div>
-        <div class="row-val"><b>Young Achievers’ School of Caloocan, Inc.</b> <i>(Septermber 2022 - May 2024)</i></div>
+        <div class="row-val"><b>Young Achievers' School of Caloocan, Inc.</b> <i>(Septermber 2022 - May 2024)</i></div>
 
         <div class="row-key"><i>Junior High School</i></div>
         <div class="row-val"><b>Bignay National High School</b> <i>(June 2018 - June 2022)</i></div>
+
+        <div class="row-key"><i>Elementary and Kindergarten</i></div>
+        <div class="row-val"><b>Roberta De Jesus Elementary School</b> <i>(June 2014 - April 2018)</i></div>
+        <div></div>
+        <div class="row-val"><b>Our Lord's Angels School</b> <i>(June 2010 - March 2014)</i></div>
       </div>
 
     </section>
 
-
-    <!--
-      ============================================================
-      PROJECTS
-      Roman numeral entries just like DIGITIZATION.wiki's specimens.
-      ============================================================
-    -->
     <section id="projects" aria-label="My projects">
 
       <div class="section-label">// PROJECTS.DIR</div>
 
       <!--
-        *** CUSTOMIZE: Replace each project entry below.
         Follow this format for each one:
 
           ProjectName(Type)
-          Built(Year) Type(Personal or Client) Status(Live / Completed / Ongoing)
+          Built(Year) Type(Personal, Academic or Client) 
+            or (Game Jam)
+          Status(Live / Completed / Ongoing)
           Short description of what it is and what you did.
           Tools(HTML, CSS, etc)
-
-        Add more entries or remove some as needed.
       -->
 
       <article class="project-entry">
         <div class="proj-num">I</div>
         <div class="proj-body">
           <div class="proj-name-row">
-            <span class="proj-name">Project Alpha</span>
-            <span class="proj-type">(Web Design)</span>
+            <span class="proj-name">Arbitrary Image Scoring</span>
+            <span class="proj-type">(UI/UX Design)</span>
           </div>
           <div class="proj-meta">
-            <span>Built(<b>2024</b>)</span>
-            <span>Type(<b>Personal</b>)</span>
-            <span>Status(<b>Live</b>)</span>
+            <span>Built(<b>May - June 2026</b>)</span>
+            <span>Type(<b>Academic</b>)</span>
+            <span>Status(<b>Completed</b>)</span>
           </div>
           <p class="proj-desc">
-            Describe what this project is and what problem it solved.
-            Be specific and clear. One or two sentences is the right length.
+            Designed three concept web page interfaces for an image subject quality scoring system, including the color palette and visual standards.
           </p>
           <div class="proj-tools">
-            <span class="proj-tool">HTML</span>
-            <span class="proj-tool">CSS</span>
-            <span class="proj-tool">JavaScript</span>
+            <span class="proj-tool">Figma</span>
           </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
+          <a href="https://www.figma.com/site/jmbIgWlUXdqsuFbyV7Rwbw/Arbitrary-Image-Scoring---Mockup?node-id=0-1&t=se1cN8MAJBxsR5IA-1" class="proj-link"
+            target="_blank" rel="noopener noreferrer">
+            View Project &rarr;
+          </a>
         </div>
       </article>
 
@@ -703,23 +697,26 @@
         <div class="proj-num">II</div>
         <div class="proj-body">
           <div class="proj-name-row">
-            <span class="proj-name">Project Beta</span>
-            <span class="proj-type">(UI Design)</span>
+            <span class="proj-name">Scholarship Form Database Proposal</span>
+            <span class="proj-type">(UI/UX + Database)</span>
           </div>
           <div class="proj-meta">
-            <span>Built(<b>2024</b>)</span>
-            <span>Type(<b>Client</b>)</span>
+            <span>Built(<b>May - June 2026</b>)</span>
+            <span>Type(<b>Academic</b>)</span>
             <span>Status(<b>Completed</b>)</span>
           </div>
           <p class="proj-desc">
-            Another project you are proud of. Talk about the design choices,
-            what worked well, and what you learned from doing it.
+            Designed two web page interfaces and seven visual assets for a scholarship application database concept, using a
+            DOST-inspired design system. Also assisted with MySQL queries for database operations.
           </p>
           <div class="proj-tools">
             <span class="proj-tool">Figma</span>
-            <span class="proj-tool">Prototyping</span>
+            <span class="proj-tool">MySQL</span>
           </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
+          <a href="https://github.com/c0re-neet/PHIL-SCHOLAR-FORM"
+            class="proj-link" target="_blank" rel="noopener noreferrer">
+            View Project &rarr;
+          </a>
         </div>
       </article>
 
@@ -727,24 +724,24 @@
         <div class="proj-num">III</div>
         <div class="proj-body">
           <div class="proj-name-row">
-            <span class="proj-name">Project Gamma</span>
-            <span class="proj-type">(Development)</span>
+            <span class="proj-name">Pila Room Reserb</span>
+            <span class="proj-type">(UI/UX Design)</span>
           </div>
           <div class="proj-meta">
-            <span>Built(<b>2023</b>)</span>
-            <span>Type(<b>Personal</b>)</span>
-            <span>Status(<b>Ongoing</b>)</span>
+            <span>Built(<b>November 2025 - January 2026</b>)</span>
+            <span>Type(<b>Academic</b>)</span>
+            <span>Status(<b>Completed</b>)</span>
           </div>
           <p class="proj-desc">
-            A more technical project that shows a different side of your skills.
-            Describe what makes it interesting or hard to build.
+            Co-designed 27 webpage interfaces for a university room reservation system concept. Created the UI/UX design, system architecture diagrams, PUP-themed brand guidelines, and graphic standards for the project.
           </p>
           <div class="proj-tools">
-            <span class="proj-tool">React</span>
-            <span class="proj-tool">CSS</span>
-            <span class="proj-tool">API</span>
+            <span class="proj-tool">Figma</span>
+            <span class="proj-tool">Canva</span>
           </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
+          <a href="https://github.com/c0re-neet/Pila-Room-Reserb" class="proj-link" target="_blank" rel="noopener noreferrer">
+            View Project &rarr;
+          </a>
         </div>
       </article>
 
@@ -752,23 +749,107 @@
         <div class="proj-num">IV</div>
         <div class="proj-body">
           <div class="proj-name-row">
-            <span class="proj-name">Project Delta</span>
-            <span class="proj-type">(Branding)</span>
+            <span class="proj-name">Breathing Machines</span>
+            <span class="proj-type">(Video Game)</span>
           </div>
           <div class="proj-meta">
-            <span>Built(<b>2023</b>)</span>
-            <span>Type(<b>Client</b>)</span>
+            <span>Built(<b>March - August 2025</b>)</span>
+            <span>Type(<b>Game Jam</b>)</span>
             <span>Status(<b>Completed</b>)</span>
           </div>
           <p class="proj-desc">
-            Your fourth project. You can show a different range here.
-            Maybe something more creative or experimental than the others.
+            A vertical slice of a Metroidvania sidescrolling shoot ’em up and Organization-Award winning project. Co-designed the characters and Helicon setting as Game Designer, while managing team task tracking.
           </p>
           <div class="proj-tools">
-            <span class="proj-tool">Illustrator</span>
-            <span class="proj-tool">Branding</span>
+            <span class="proj-tool">C++</span>
+            <span class="proj-tool">Canva</span>
+            <span class="proj-tool">Google Workspace</span>
           </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
+        <a href="https://github.com/blazereon/Project-Shoot-Em-Down" class="proj-link" target="_blank" rel="noopener noreferrer">
+          View Project &rarr;
+        </a>
+        </div>
+      </article>
+
+      <article class="project-entry">
+        <div class="proj-num">V</div>
+        <div class="proj-body">
+          <div class="proj-name-row">
+            <span class="proj-name">DailyGOODS Grocery Management System</span>
+            <span class="proj-type">(Desktop Application)</span>
+          </div>
+          <div class="proj-meta">
+            <span>Built(<b>January - May 2024</b>)</span>
+            <span>Type(<b>Academic</b>)</span>
+            <span>Status(<b>Completed</b>)</span>
+          </div>
+          <p class="proj-desc">
+          Researched and helped plan a grocery management system with user login and registration, employee records, inventory
+          management, and membership cards. Also designed the system's logo and color palette to create a clear and consistent
+          visual style.
+          </p>
+          <div class="proj-tools">
+            <span class="proj-tool">Visual Basic (.NET)</span>
+            <span class="proj-tool">Canva</span>
+            <span class="proj-tool">Google Workspace</span>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1tqJkabXcfG9yjo0BNZ9Y31_3cVXD5_0O?usp=sharing" class="proj-link" target="_blank"
+            rel="noopener noreferrer">
+            View Project &rarr;
+          </a>
+        </div>
+      </article>
+
+      <article class="project-entry">
+        <div class="proj-num">VI</div>
+        <div class="proj-body">
+          <div class="proj-name-row">
+            <span class="proj-name">Basic Calculator</span>
+            <span class="proj-type">(Desktop Application)</span>
+          </div>
+          <div class="proj-meta">
+            <span>Built(<b>November 2023</b>)</span>
+            <span>Type(<b>Academic</b>)</span>
+            <span>Status(<b>Completed</b>)</span>
+          </div>
+          <p class="proj-desc">
+            Built a functional calculator with basic arithmetic operations, calculation history, and a customizable keypad and
+            display. Served as the lead programmer and handled the main development and testing.
+          </p>
+          <div class="proj-tools">
+            <span class="proj-tool">Visual Basic (.NET)</span>
+          </div>
+          <a href="https://www.linkedin.com/posts/zyrah-mae-m-dotollo_programming-activity-7494317064770215936-8lnC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9MZskBEACNrkR5bkrv4n9mrVxds3hsB1k" class="proj-link"
+            target="_blank" rel="noopener noreferrer">
+            View Project &rarr;
+          </a>
+        </div>
+      </article>
+
+      <article class="project-entry">
+        <div class="proj-num">VII</div>
+        <div class="proj-body">
+          <div class="proj-name-row">
+            <span class="proj-name">AlertCane (Walking Stick with Alert Sensor)</span>
+            <span class="proj-type">(Hardware)</span>
+          </div>
+          <div class="proj-meta">
+            <span>Built(<b>September 2023</b>)</span>
+            <span>Type(<b>Academic</b>)</span>
+            <span>Status(<b>Completed</b>)</span>
+          </div>
+          <p class="proj-desc">
+          Co-designed a smart walking stick that uses an ultrasonic sensor and buzzer to detect nearby obstacles. Helped build and
+          assemble the components into a recyclable bamboo walking stick and led the project presentation at the YASCI Math and
+          Science 2023 Exhibit.
+          </p>
+          <div class="proj-tools">
+            <span class="proj-tool">C++</span>
+          </div>
+          <a href="https://www.linkedin.com/posts/zyrah-mae-m-dotollo_back-in-september-2023-yes-so-many-things-activity-7493915924346097664--Kxk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9MZskBEACNrkR5bkrv4n9mrVxds3hsB1k"
+            class="proj-link" target="_blank" rel="noopener noreferrer">
+            View Project &rarr;
+          </a>
         </div>
       </article>
 
@@ -786,7 +867,6 @@
 
       <div class="contact-grid">
 
-        <!-- Left column: links in archive row style -->
         <div>
           <p class="contact-note">
             Got a project in mind or just want to say hello?
@@ -800,19 +880,17 @@
           <div class="contact-links-list">
             <div class="contact-link-row">
               <span class="cl-label">Email</span>
-              <span class="cl-val"><a href="mailto:you@email.com">you@email.com</a></span>
+              <span class="cl-val"><a href="mailto:zyrahmaedotollo@email.com"><u>zyrahmaedotollo@email.com</u></a></span>
             </div>
+
             <div class="contact-link-row">
               <span class="cl-label">GitHub</span>
-              <span class="cl-val"><a href="#">@yourhandle</a></span>
+              <span class="cl-val"><a href="https://github.com/toschiiiii"><u>@toschiiiii</u></a></span>
             </div>
-            <div class="contact-link-row">
-              <span class="cl-label">Twitter / X</span>
-              <span class="cl-val"><a href="#">@yourhandle</a></span>
-            </div>
+
             <div class="contact-link-row">
               <span class="cl-label">LinkedIn</span>
-              <span class="cl-val"><a href="#">your-linkedin</a></span>
+              <span class="cl-val"><a href="https://www.linkedin.com/in/zyrah-mae-m-dotollo/"><u>Zyrah Mae M. Dotollo</u></a></span>
             </div>
           </div>
         </div>
@@ -821,9 +899,8 @@
         <div>
           <!--
             NOTE: This form shows an alert right now.
-            We will connect it to a real email service (like Formspree)
-            in a later step. For now, fill in your info and it will work
-            once connected.
+            Will connect it to a real email service (like Formspree) in a later step. 
+            For now, dummy info is in and it will work once connected.
           -->
           <div class="form-row">
             <label class="form-lbl" for="f-name">Name</label>
@@ -831,7 +908,7 @@
           </div>
           <div class="form-row">
             <label class="form-lbl" for="f-email">Email</label>
-            <input class="form-field" type="email" id="f-email" placeholder="your@email.com" />
+            <input class="form-field" type="email" id="f-email" placeholder="youremail@domain.com" />
           </div>
           <div class="form-row">
             <label class="form-lbl" for="f-msg">Message</label>
@@ -844,14 +921,12 @@
 
     </section>
 
-  </div><!-- /wrap -->
+  </div>
 
 
   <!--
     ============================================================
     FOOTER
-    The ASCII block art at the bottom mirrors how DIGITIZATION.wiki
-    repeats its title in the footer area.
     ============================================================
   -->
   <footer>
@@ -866,11 +941,8 @@
     </pre>
 
     <div class="footer-text">
-      <!--
-        *** CUSTOMIZE: Replace "Your Name" with your real name.
-      -->
-      <div>Your Name Portfolio [&copy;2026] All rights reserved</div>
-      <div>An ongoing archive of design and development work.</div>
+      <div>toschi.dev [&copy;2026] All rights reserved</div>
+      <div>Don't be a stranger!</div>
     </div>
 
   </footer>
@@ -895,7 +967,7 @@
       localStorage.setItem('theme', next);
 
       document.getElementById('theme-btn').textContent =
-        next === 'dark' ? '[ light ]' : '[ dark ]';
+        next === 'dark' ? '[ turn it on! ]' : '[ turn it off! ]';
     }
 
     // Restore saved theme on page load
@@ -904,15 +976,14 @@
       if (saved) {
         document.documentElement.setAttribute('data-theme', saved);
         document.getElementById('theme-btn').textContent =
-          saved === 'dark' ? '[ light ]' : '[ dark ]';
+          saved === 'dark' ? '[ turn it on! ]' : '[ turn it off! ]';
       }
     })();
 
 
     // CONTACT FORM
     // Right now this just shows an alert as a placeholder.
-    // In a later step we will connect it to Formspree
-    // so real messages land in your email inbox.
+    // Will connect it to Formspree so real messages land in  my email inbox.
 
     function handleSend() {
       const name  = document.getElementById('f-name').value.trim();
@@ -925,7 +996,7 @@
       }
 
       // Placeholder action — replace with real form action later
-      alert('Message ready to send! We will connect this to a real email service in the next step.');
+      alert('Message ready to send....Just kidding! Will connect this to a real email service soon!');
     }
   </script>
 
