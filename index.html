@@ -22,10 +22,10 @@
     }
 
     [data-theme="light"] {
-      --bg:     #f3e8ff;
-      --bg-2:   #e2ccff;
-      --text:   #1a0040;
-      --dim:    #6a0dad;
+      --bg: #f3e8ff;
+      --bg-2: #e2ccff;
+      --text: #1a0040;
+      --dim: #6a0dad;
       --border: #bf00ff;
     }
 
@@ -151,11 +151,7 @@
       border-right: 1px solid var(--border);
     }
 
-    .nav-links a:hover {
-      color: var(--border);
-      text-shadow: 0 0 8px rgba(191, 0, 255, 0.35);
-      text-decoration: none;
-    }
+
 
     .theme-toggle {
       font-family: var(--font);
@@ -163,17 +159,17 @@
       color: var(--dim);
       background: none;
       border: 1px solid var(--border);
+      width: 160px;
+      height: 29px;
       padding: 5px 14px;
       cursor: pointer;
       letter-spacing: 0.06em;
+      text-align: center;
+      white-space: nowrap;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .theme-toggle:hover {
-      color: var(--border);
-      border-color: var(--border);
-      box-shadow: 0 0 10px rgba(191, 0, 255, 0.25);
-    }
+
 
     /* ============================================================
        LAYOUT WRAPPER
@@ -329,21 +325,18 @@
 
     .hero-cta {
       display: inline-block;
+      font-family: var(--font);
       font-size: 12px;
-      border: 1px solid var(--dim);
+      border: 1px solid var(--border);
       padding: 9px 22px;
       letter-spacing: 0.06em;
       color: var(--text);
-      transition: background 0.2s ease, color 0.2s ease;
+      text-decoration: none;
+      transition: background 0.25s ease, color 0.25s ease,
+        border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .hero-cta:hover {
-      background: var(--border);
-      color: white;
-      border-color: var(--border);
-      box-shadow: 0 0 16px rgba(191, 0, 255, 0.4);
-      text-decoration: none;
-    }
+
 
     /* ============================================================
        ABOUT
@@ -389,11 +382,7 @@
       transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .skill-pill:hover {
-      color: var(--border);
-      border-color: var(--border);
-      box-shadow: 0 0 8px rgba(191, 0, 255, 0.2);
-    }
+
 
     /* ============================================================
        PROJECTS
@@ -407,13 +396,60 @@
       transition: background 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .project-entry:hover {
-      background: var(--bg-2);
-      box-shadow: 0 0 18px rgba(191, 0, 255, 0.18);
-    }
-
     .project-entry:last-child {
       border-bottom: 1px solid var(--border);
+    }
+
+    /* ============================================================
+      ARCHIVE FILTERS
+    ============================================================ */
+
+    .archive-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-bottom: 36px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .archive-filter {
+      font-family: var(--font);
+      font-size: 11px;
+      color: var(--dim);
+      background: transparent;
+      border: none;
+      border-right: 1px solid var(--border);
+      padding: 9px 16px;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        text-shadow 0.2s ease;
+    }
+
+    .archive-filter:first-child {
+      border-left: 1px solid var(--border);
+    }
+
+    .archive-filter.active {
+      color: var(--text);
+      background: var(--bg-2);
+    }
+
+    .archive-filter:hover {
+      color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(199, 125, 255, 0.75),
+        0 0 18px rgba(199, 125, 255, 0.35);
+    }
+
+    .archive-entry {
+      transition:
+        opacity 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .proj-num {
@@ -491,12 +527,7 @@
       letter-spacing: 0.05em;
     }
 
-    .proj-link:hover {
-      color: var(--border);
-      border-color: var(--border);
-      text-shadow: 0 0 8px rgba(191, 0, 255, 0.4);
-      text-decoration: none;
-    }
+
 
     /* ============================================================
        CONTACT
@@ -538,12 +569,7 @@
       transition: color 0.2s ease;
     }
 
-    .cl-val a:hover {
-      color: var(--border);
-      border-color: var(--border);
-      text-shadow: 0 0 8px rgba(191, 0, 255, 0.4);
-      text-decoration: none;
-    }
+
 
     /* FORM */
     .form-row {
@@ -594,21 +620,16 @@
       font-family: var(--font);
       font-size: 12px;
       letter-spacing: 0.08em;
-      color: var(--bg);
-      background: var(--text);
-      border: 1px solid var(--text);
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border);
       padding: 10px 22px;
       cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: background 0.25s ease, color 0.25s ease,
+        border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .form-send:hover {
-      background: var(--border);
-      color: white;
-      border-color: var(--border);
-      box-shadow: 0 0 16px rgba(191, 0, 255, 0.4);
-      text-decoration: none;
-    }
+
 
     /* ============================================================
        FOOTER
@@ -633,6 +654,143 @@
       font-size: 11px;
       color: var(--dim);
       line-height: 1.9;
+    }
+
+
+    /* ============================================================
+       DARK MODE HOVERS
+    ============================================================ */
+
+    [data-theme="dark"] .hero-cta:hover,
+    [data-theme="dark"] .form-send:hover {
+      background: var(--dim);
+      color: #10002b;
+      border-color: var(--dim);
+      box-shadow:
+        0 0 12px rgba(199, 125, 255, 0.85),
+        0 0 28px rgba(199, 125, 255, 0.4);
+      text-decoration: none;
+    }
+
+    [data-theme="dark"] .theme-toggle:hover {
+      background: var(--dim);
+      color: #10002b;
+      border-color: var(--dim);
+      box-shadow:
+        0 0 12px rgba(199, 125, 255, 0.85),
+        0 0 28px rgba(199, 125, 255, 0.4);
+    }
+
+    [data-theme="dark"] .nav-links a:hover {
+      color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(199, 125, 255, 0.95),
+        0 0 20px rgba(199, 125, 255, 0.5);
+      text-decoration: none;
+    }
+
+    [data-theme="dark"] .skill-pill:hover {
+      color: var(--dim);
+      border-color: var(--dim);
+      box-shadow:
+        0 0 10px rgba(199, 125, 255, 0.85),
+        0 0 22px rgba(199, 125, 255, 0.4);
+      text-shadow: 0 0 8px rgba(199, 125, 255, 0.75);
+    }
+
+    [data-theme="dark"] .project-entry:hover {
+      background: var(--bg-2);
+      box-shadow:
+        0 0 22px rgba(199, 125, 255, 0.25),
+        inset 0 0 28px rgba(199, 125, 255, 0.04);
+    }
+
+    [data-theme="dark"] .proj-link:hover {
+      color: var(--dim);
+      border-color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(199, 125, 255, 0.95),
+        0 0 20px rgba(199, 125, 255, 0.5);
+      text-decoration: none;
+    }
+
+    [data-theme="dark"] .archive-filter:hover {
+      color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(123, 44, 191, 0.65),
+        0 0 18px rgba(123, 44, 191, 0.35);
+    }
+
+    [data-theme="dark"] .cl-val a:hover {
+      color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(199, 125, 255, 0.95),
+        0 0 20px rgba(199, 125, 255, 0.5);
+      text-decoration: none;
+    }
+
+    /* ============================================================
+       LIGHT MODE HOVERS
+    ============================================================ */
+
+    [data-theme="light"] .hero-cta:hover,
+    [data-theme="light"] .form-send:hover {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    [data-theme="light"] .theme-toggle:hover {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+      box-shadow: none;
+    }
+
+    [data-theme="light"] .nav-links a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    [data-theme="light"] .skill-pill:hover {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    [data-theme="light"] .project-entry:hover {
+      background: var(--bg-2);
+    }
+
+    [data-theme="light"] .proj-link:hover {
+      color: var(--dim);
+      border-color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(123, 44, 191, 0.65),
+        0 0 18px rgba(123, 44, 191, 0.35);
+      text-decoration: none;
+    }
+
+    [data-theme="light"] .archive-filter:hover {
+      color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(123, 44, 191, 0.65),
+        0 0 18px rgba(123, 44, 191, 0.35);
+    }
+
+    [data-theme="light"] .archive-filter.active {
+      color: var(--text);
+      background: var(--bg-2);
+    }
+
+    [data-theme="light"] .cl-val a:hover {
+      color: var(--dim);
+      text-shadow:
+        0 0 8px rgba(123, 44, 191, 0.65),
+        0 0 18px rgba(123, 44, 191, 0.35);
+      text-decoration: none;
     }
 
     /* ============================================================
@@ -722,9 +880,9 @@
     <div class="nav-logo">+toschi.dev+</div>
 
     <ul class="nav-links">
-      <li><a href="#home">Archive</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#archive">Archive</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -746,8 +904,8 @@
 
       <template id="train-tpl"> o O O
         o ___ _ ___ _ ___ _ ___ _ ___ _ ___
-        TS__[O]  |___|   _(_)_   |___|   _(_)_   |___|   _(_)_   |___|   _(_)_   |___|  
-       {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
+        TS__[O] |___| _(_)_ |___| _(_)_ |___| _(_)_ |___| _(_)_ |___|
+        {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
         ./o--000'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'</template>
 
       <div class="train-scene" aria-label="Animated ASCII steam train">
@@ -864,14 +1022,24 @@
 
     </section>
 
-    <section id="projects" aria-label="My projects">
-
-      <div class="section-label">// PROJECTS.DIR</div>
+    <section id="archive" aria-label="My archive">
+    
+      <div class="section-label">// ARCHIVE.DIR</div>
+    
+      <div class="archive-filters" role="group" aria-label="Archive filters">
+        <button class="archive-filter active" data-filter="all">[ ALL ]</button>
+        <button class="archive-filter" data-filter="project">[ PROJECTS ]</button>
+        <button class="archive-filter" data-filter="experience">[ EXPERIENCES ]</button>
+        <button class="archive-filter" data-filter="certification">[ CERTIFICATIONS ]</button>
+      </div>
 
       <!--
         Follow this format for each one:
 
-          ProjectName(Type)
+        <article class="project-entry archive-entry" data-category=" "> 
+        data category could be the following: project, experience, OR certification         
+          
+        ProjectName(Type)
           Built(Year) Type(Personal, Academic or Client) 
             or (Game Jam)
           Status(Live / Completed / Ongoing)
@@ -879,7 +1047,7 @@
           Tools(HTML, CSS, etc)
       -->
 
-      <article class="project-entry">
+      <article class="project-entry archive-entry" data-category="project">
         <div class="proj-num">I</div>
         <div class="proj-body">
           <div class="proj-name-row">
@@ -905,7 +1073,7 @@
         </div>
       </article>
 
-      <article class="project-entry">
+      <article class="project-entry archive-entry" data-category="project">
         <div class="proj-num">II</div>
         <div class="proj-body">
           <div class="proj-name-row">
@@ -933,7 +1101,7 @@
         </div>
       </article>
 
-      <article class="project-entry">
+      <article class="project-entry archive-entry" data-category="project">
         <div class="proj-num">III</div>
         <div class="proj-body">
           <div class="proj-name-row">
@@ -960,7 +1128,7 @@
         </div>
       </article>
 
-      <article class="project-entry">
+      <article class="project-entry archive-entry" data-category="project">
         <div class="proj-num">IV</div>
         <div class="proj-body">
           <div class="proj-name-row">
@@ -988,7 +1156,7 @@
         </div>
       </article>
 
-      <article class="project-entry">
+      <article class="project-entry archive-entry" data-category="project">
         <div class="proj-num">V</div>
         <div class="proj-body">
           <div class="proj-name-row">
@@ -1019,7 +1187,7 @@
         </div>
       </article>
 
-      <article class="project-entry">
+      <article class="project-entry archive-entry" data-category="project">
         <div class="proj-num">VI</div>
         <div class="proj-body">
           <div class="proj-name-row">
@@ -1046,7 +1214,7 @@
         </div>
       </article>
 
-      <article class="project-entry">
+      <article class="project-entry archive-entry" data-category="project">
         <div class="proj-num">VII</div>
         <div class="proj-body">
           <div class="proj-name-row">
@@ -1095,10 +1263,6 @@
             Reach out through any of these channels.
           </p>
 
-          <!--
-            *** CUSTOMIZE: Replace each href and link text
-            with your actual email, GitHub handle, and social links.
-          -->
           <div class="contact-links-list">
             <div class="contact-link-row">
               <span class="cl-label">Email</span>
@@ -1122,7 +1286,7 @@
         <!-- Right column: message form -->
         <div>
           <!--
-            NOTE: This form shows an alert right now.
+            NOTE: This form shows an alert right now. 
             Will connect it to a real email service (like Formspree) in a later step. 
             For now, dummy info is in and it will work once connected.
           -->
@@ -1204,10 +1368,38 @@
       }
     })();
 
+    // ARCHIVE FILTER
+
+    (function () {
+      const filters = document.querySelectorAll('.archive-filter');
+      const entries = document.querySelectorAll('.archive-entry');
+
+      filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          const selected = filter.dataset.filter;
+
+          filters.forEach(button => {
+            button.classList.remove('active');
+          });
+
+          filter.classList.add('active');
+
+          entries.forEach(entry => {
+            const category = entry.dataset.category;
+
+            if (selected === 'all' || category === selected) {
+              entry.style.display = '';
+            } else {
+              entry.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
 
     // CONTACT FORM
     // Right now this just shows an alert as a placeholder.
-    // Will connect it to Formspree so real messages land in  my email inbox.
+    // Will connect it to smth so real messages land in  my email inbox.
 
     function handleSend() {
       const name = document.getElementById('f-name').value.trim();
